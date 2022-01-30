@@ -11,3 +11,5 @@ scikit-learn
 graphviz
 ipykernel
 jupyterlab
+beautifulsoup4
+rpy2
