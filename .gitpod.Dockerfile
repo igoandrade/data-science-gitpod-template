@@ -9,7 +9,7 @@ COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
 # Install R
-RUN apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev pandoc texlive tcl r-base r-base-dev
+RUN apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev pandoc texlive texlive texlive-latex-extra tcl r-base r-base-dev
 RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.us.r-project.org'; options(repos = r);" > ~/.Rprofile
 RUN Rscript -e "install.packages('languageserver')"
 RUN Rscript -e "install.packages('caret')"
@@ -19,6 +19,8 @@ RUN Rscript -e "install.packages('HSAUR')"
 RUN Rscript -e "install.packages('purrr')"
 RUN Rscript -e "install.packages('knitr')"
 RUN Rscript -e "install.packages('markdown')"
+RUN Rscript -e "install.packages('rmarkdown')"
+RUN Rscript -e "install.packages('kableExtra')"
 RUN Rscript -e "install.packages('stringr')"
 RUN Rscript -e "install.packages('lubridate')"
 RUN Rscript -e "install.packages('quantmod')"
@@ -32,5 +34,3 @@ RUN Rscript -e "install.packages('scales')"
 RUN Rscript -e "install.packages('timetk')"
 RUN Rscript -e "install.packages('tibbletime')"
 RUN Rscript -e "install.packages('PerformanceAnalytics')"
-RUN Rscript -e "install.packages('IRkernel')"
-RUN Rscript -e "IRkernel::installspec()"
