@@ -13,3 +13,4 @@ ipykernel
 jupyterlab
 beautifulsoup4
 rpy2
+radian
