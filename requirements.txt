@@ -2,6 +2,7 @@ numpy
 scipy
 sympy
 pandas
+pandas-datareader
 matplotlib
 seaborn
 plotly
