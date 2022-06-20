@@ -4,7 +4,7 @@ USER root
 RUN apt-get update
 
 # Install R
-RUN apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev pandoc texlive texlive texlive-latex-extra tcl r-base r-base-dev
+RUN apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev pandoc texlive texlive-publishers texlive-lang-portuguese texlive-latex-extra texlive-fonts-recommended latexmk tcl r-base r-base-dev
 RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.us.r-project.org'; options(repos = r);" > ~/.Rprofile
 RUN Rscript -e "install.packages('languageserver')"
 RUN Rscript -e "install.packages('caret')"
@@ -12,6 +12,7 @@ RUN Rscript -e "install.packages('ggplot2')"
 RUN Rscript -e "install.packages('reshape2')"
 RUN Rscript -e "install.packages('HSAUR')"
 RUN Rscript -e "install.packages('purrr')"
+RUN Rscript -e "install.packages('reticulate')"
 RUN Rscript -e "install.packages('knitr')"
 RUN Rscript -e "install.packages('markdown')"
 RUN Rscript -e "install.packages('rmarkdown')"
