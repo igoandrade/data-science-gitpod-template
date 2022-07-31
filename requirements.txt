@@ -22,7 +22,6 @@ selenium
 SQLAlchemy
 statsmodels
 sympy
-sympy
 textblob
 urllib3
 wordcloud
